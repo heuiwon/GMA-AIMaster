@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈 | AIMaster</title>
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/pages/home.css" />
+</head>
+<body>
+  <!-- 공통 컴포넌트: Header (현재 메뉴: home) -->
+  <header id="header" data-active="home"></header>
+
+  <main id="main">
+    <!-- PAGE 1. Home (메인) -->
+    <section class="home-intro">
+      <h1>AI, 처음부터 차근차근 배워 봐요</h1>
+      <p>비전공 대학생도 쉽게 따라 할 수 있도록 AI의 개념부터 활용법까지 단계별로 안내해요.</p>
+    </section>
+
+    <!-- 기능 카드 2개: AI 단계학습 / 학업에 활용하기 (페이지 전용, Box 기본 사용) -->
+    <section class="home-cards" id="home-cards"></section>
+  </main>
+
+  <!-- 공통 컴포넌트: Footer -->
+  <footer id="footer"></footer>
+
+  <script type="module" src="/src/pages/home.js"></script>
+</body>
+</html>

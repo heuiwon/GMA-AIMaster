@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단계별 학습 | AIMaster</title>
+    <link rel="stylesheet" href="/src/styles/reset.css" />
+    <link rel="stylesheet" href="/src/styles/variables.css" />
+    <link rel="stylesheet" href="/src/styles/components.css" />
+    <link rel="stylesheet" href="/src/styles/pages/learn.css" />
+  </head>
+  <body>
+    <!-- 공통 컴포넌트: Header (현재 메뉴: learn) -->
+    <header id="header" data-active="learn"></header>
+
+    <main id="main">
+      <!-- PAGE 3. AI 단계학습 — 목록 -->
+      <nav class="breadcrumb">홈 &gt; 단계별 학습</nav>
+      <h1>무엇을 학습할까요?</h1>
+      <p>관심 있는 주제나 지금 필요한 기능을 자유롭게 골라 보세요.</p>
+
+      <div class="learn-layout">
+        <!-- 단계 목록: 단계 항목(페이지 전용) + Tag + Button -->
+        <ol class="step-list" id="step-list"></ol>
+        <!-- 내 진행률 카드(페이지 전용, Box 기본 사용) -->
+        <aside class="progress-card" id="progress-card"></aside>
+      </div>
+    </main>
+
+    <!-- 공통 컴포넌트: Footer -->
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/pages/learn.js"></script>
+  </body>
+</html>

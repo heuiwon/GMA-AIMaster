@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>학업에 활용하기 | AIMaster</title>
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/pages/study.css" />
+</head>
+<body>
+  <!-- 공통 컴포넌트: Header (현재 메뉴: study) -->
+  <header id="header" data-active="study"></header>
+
+  <main id="main">
+    <!-- PAGE 6. 학업에 활용하기 — 목록 -->
+    <nav class="breadcrumb">홈 &gt; 학업에 활용하기</nav>
+    <h1>학업에 AI를 활용해 볼까요?</h1>
+    <p>상황을 골라 AI 활용 방법과 예시 프롬프트를 확인하세요.</p>
+
+    <!-- 분야 카드 3개(페이지 전용): 글쓰기 / 수학 문제 풀이 / 강의 이해 -->
+    <section class="study-cards" id="study-cards"></section>
+
+    <!-- 윤리 지침 안내 (Box 연한 배경) -->
+    <section class="ethics-notice" id="ethics-notice"></section>
+  </main>
+
+  <!-- 공통 컴포넌트: Footer -->
+  <footer id="footer"></footer>
+
+  <script type="module" src="/src/pages/study.js"></script>
+</body>
+</html>

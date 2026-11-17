@@ -1,0 +1,183 @@
+/* 공통 컴포넌트 스타일: Header, Footer, Button, Box, Tag
+   값은 Figma AIMASTER › UI Design | 화면 설계 기준 */
+
+/* ---------- 기본 ---------- */
+body {
+  font-family: var(--font-base);
+  color: var(--color-body);
+  background: var(--color-bg);
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--bar-padding-x);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 로고: 피그마에서는 211 × 71 이미지가 헤더 왼쪽 끝(0)에 붙어 있음 */
+.header__logo {
+  margin-left: calc(var(--bar-padding-x) * -1);
+}
+.header__logo img {
+  height: 71px;
+  width: auto;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* 메뉴 항목: 글자 아래에 28 × 3 밑줄 자리 (현재 메뉴만 색이 보임) */
+.header__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-15);
+  font-weight: 400;
+  color: var(--color-body);
+}
+.header__link::after {
+  content: "";
+  width: 28px;
+  height: 3px;
+  background: transparent;
+}
+.header__link.is-active {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.header__link.is-active::after {
+  background: var(--color-primary-active);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px var(--bar-padding-x);
+  background: var(--color-bg-sub);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-body);
+}
+.footer__links {
+  display: flex;
+  gap: 16px; /* 피그마는 공백 4칸으로 띄움 → 16px로 맞춤 (확인 필요) */
+  font-size: var(--fs-14);
+  font-weight: 500;
+}
+.footer__copy {
+  font-size: var(--fs-13);
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-8);
+  font-family: var(--font-base);
+  font-size: var(--fs-15);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* primary: 파란색 채움 (이어서 학습하기, 복사하기) */
+.btn--primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+/* outline: 테두리만 (학습하기, 다시 보기, 바로가기) */
+.btn--outline {
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+/* small: 추천 AI 바로가기 ↗ — 피그마 높이 30, 글자 12 */
+.btn--small {
+  height: 30px;
+  padding: 0 12px; /* 피그마 좌우 24는 글자가 넘쳐서 12로 줄임 (확인 필요) */
+  background: var(--color-bg);
+  color: var(--color-primary);
+  font-size: var(--fs-12);
+}
+
+/* lg: 큰 버튼 크기 (내 진행률 · 복사하기 버튼) — primary/outline과 함께 사용
+   예) class="btn btn--primary btn--lg" */
+.btn--lg {
+  padding: 16px 32px;
+  font-size: var(--fs-17);
+}
+
+/* ---------- Box ---------- */
+.box {
+  border-radius: var(--radius-8);
+}
+
+/* default: 흰 배경 + 테두리 (섹션 카드, 기능 카드, 진행률 카드) */
+.box--default {
+  padding: 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+/* light: 연한 배경 (예시 프롬프트, 윤리 지침 안내) */
+.box--light {
+  padding: 20px;
+  background: var(--color-bg-sub);
+}
+
+/* ---------- Tag ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-8);
+  font-size: var(--fs-14);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* 체크 표시: 피그마는 16px 체크 아이콘 → 글자 기호로 대신함 */
+.tag--done::before,
+.tag--before::before {
+  content: "✓";
+}
+
+/* 학습 완료: 파란 배경 + 흰 글자 */
+.tag--done {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+  color: #ffffff;
+}
+
+/* 진행 중: 회색 배경 + 파란 글자 + ● */
+.tag--doing {
+  background: var(--color-border);
+  color: var(--color-primary);
+}
+.tag--doing::before {
+  content: "●";
+}
+
+/* 학습 전: 흰 배경 + 테두리 + 회색 글자 */
+.tag--before {
+  background: var(--color-bg);
+  color: var(--color-body);
+}
