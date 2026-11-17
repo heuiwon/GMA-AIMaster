@@ -1,0 +1,22 @@
+/* ==========================================================
+   NoticeBanner — 경고 아이콘 + 안내 문구 + 링크 (윤리 지침 안내)
+   ========================================================== */
+
+.notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--color-bg-sub);
+  border-radius: var(--radius-12);
+}
+.notice-banner__icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+.notice-banner__text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-heading);
+}

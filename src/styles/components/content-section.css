@@ -1,0 +1,43 @@
+/* ==========================================================
+   ContentSection — 상세 페이지의 번호 제목 + 본문 상자
+   UsageStep — "활용 방법" 상자 안의 STEP 1, STEP 2 … 묶음
+   ========================================================== */
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-8);
+}
+/* STEP이 들어가는 "활용 방법" 상자는 간격 20 */
+.content-section--steps {
+  gap: 20px;
+}
+.content-section__heading {
+  font-size: var(--fs-22);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.content-section__body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-body);
+}
+.content-section__body p + p {
+  margin-top: 8px;
+}
+
+/* ---------- UsageStep ---------- */
+.usage-step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.usage-step__heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-heading);
+}

@@ -1,0 +1,18 @@
+/* ==========================================================
+   Box — 내용을 담는 기본 상자
+   box--default: 흰 배경 + 테두리 / box--light: 연한 배경
+   예) <div class="box box--default"> ... </div>
+   ========================================================== */
+
+.box {
+  border-radius: var(--radius-8);
+}
+.box--default {
+  padding: 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+.box--light {
+  padding: 20px;
+  background: var(--color-bg-sub);
+}

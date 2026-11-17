@@ -1,0 +1,54 @@
+/* ==========================================================
+   FeatureCard — 아이콘 + 제목 + 설명 + 버튼 카드
+   기본: 학업에 활용하기 목록 카드 (높이 352, 제목 24)
+   feature-card--lg: Home 카드 (높이 403, 제목 28, 설명 24)
+   ========================================================== */
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 352px;
+  padding: 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-8);
+}
+.feature-card__icon {
+  display: flex;
+  align-items: center;
+}
+.feature-card__icon img {
+  display: block;
+}
+.feature-card__title {
+  font-size: var(--fs-24);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.feature-card__desc {
+  font-size: var(--fs-15);
+  color: var(--color-body);
+  line-height: 1.4;
+}
+/* 버튼은 카드 오른쪽 아래 */
+.feature-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+/* ---------- Home용 큰 카드 ---------- */
+.feature-card--lg {
+  min-height: 403px;
+  border-radius: var(--radius-12);
+}
+.feature-card--lg .feature-card__icon {
+  height: 106px;
+}
+.feature-card--lg .feature-card__title {
+  font-size: 28px;
+}
+.feature-card--lg .feature-card__desc {
+  font-size: var(--fs-24);
+}
