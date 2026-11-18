@@ -1,0 +1,107 @@
+/* ==========================================================
+   레이아웃 (Layout)
+   - .page          : 헤더와 푸터 사이 본문 틀 (폭 1200, 위 48 · 아래 80)
+   - .page-title    : 경로 + 페이지 제목 + 설명
+   - .section       : 소제목 + 설명 + 내용 묶음
+   - .grid-2/.grid-3: 카드 2열 · 3열 배치
+   - .with-aside    : 왼쪽 내용 + 오른쪽 사이드 (단계학습 목록)
+   - .page-actions  : 페이지 맨 아래 버튼 줄 (오른쪽 정렬)
+   ========================================================== */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: calc(var(--content-width) + var(--page-padding-x) * 2);
+  margin: 0 auto;
+  padding: 48px var(--page-padding-x) 80px;
+}
+
+/* 상세 페이지(Step 상세, 학업 상세)는 블록 사이 간격 32 */
+.page--detail {
+  gap: 32px;
+}
+
+/* ---------- PageTitle ---------- */
+.page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.page-title__path {
+  font-size: var(--fs-14);
+  color: var(--color-body);
+}
+.page-title__heading {
+  font-size: var(--fs-32);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.page-title__desc {
+  font-size: var(--fs-17);
+  color: var(--color-body);
+  line-height: 1.6;
+}
+
+/* ---------- Section ---------- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.section__heading {
+  font-size: var(--fs-22);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+/* 학업 상세의 "추천 AI"처럼 조금 더 큰 소제목 */
+.section__heading--lg {
+  font-size: var(--fs-24);
+}
+.section__desc {
+  font-size: var(--fs-15);
+  color: var(--color-body);
+}
+
+/* ---------- Grid ---------- */
+.grid-2,
+.grid-3 {
+  display: grid;
+  gap: 24px;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ---------- WithAside (왼쪽 내용 + 오른쪽 380px 사이드) ---------- */
+.with-aside {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+.with-aside__main {
+  flex: 1;
+  min-width: 0;
+}
+.with-aside__side {
+  flex-shrink: 0;
+  width: 380px;
+}
+
+/* ---------- PageActions ---------- */
+.page-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* 상세 페이지의 경로는 15px, 제목과의 간격 32 */
+.page--detail .page-title__path {
+  margin-bottom: 20px;
+  font-size: var(--fs-15);
+}

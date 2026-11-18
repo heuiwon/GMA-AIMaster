@@ -1,0 +1,30 @@
+/* ==========================================================
+   ErrorMessage — 가운데 정렬 오류 안내 (아이콘 + 제목 + 설명 + 버튼)
+   ========================================================== */
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 120px 0;
+  text-align: center;
+}
+.error-message__icon {
+  width: 88px;
+  height: 88px;
+}
+.error-message__title {
+  font-size: var(--fs-32);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.error-message__desc {
+  font-size: var(--fs-17);
+  color: var(--color-body);
+}
+.error-message__actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+}

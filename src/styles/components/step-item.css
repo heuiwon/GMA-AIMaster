@@ -1,0 +1,106 @@
+/* ==========================================================
+   StepItem — 단계학습 목록의 한 줄 (번호 원 + 연결선 + 카드)
+   상태: step-item--done(완료) / step-item--current(진행 중) / step-item--todo(학습 전)
+   마지막 항목은 연결선이 자동으로 숨겨짐
+   ========================================================== */
+
+.step-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-item {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  padding-bottom: 16px;
+}
+.step-item:last-child {
+  padding-bottom: 0;
+}
+
+/* ---------- 왼쪽: 번호 원 + 연결선 ---------- */
+.step-item__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.step-item__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-body);
+}
+.step-item__line {
+  flex: 1;
+  width: 3px;
+  margin-bottom: -16px; /* 다음 항목 원까지 이어지게 */
+  background: var(--color-border);
+}
+.step-item:last-child .step-item__line {
+  display: none;
+}
+
+/* ---------- 오른쪽: 카드 ---------- */
+.step-item__card {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 16px;
+  min-width: 0;
+  padding: 20px 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-12);
+}
+.step-item__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+  min-width: 0;
+}
+.step-item__label {
+  font-size: var(--fs-13);
+  font-weight: 700;
+  color: var(--color-body);
+}
+.step-item__title {
+  font-size: var(--fs-19);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.step-item__desc {
+  font-size: var(--fs-14);
+  color: var(--color-body);
+}
+
+/* ---------- 상태: 완료 ---------- */
+.step-item--done .step-item__number {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 18px;
+}
+.step-item--done .step-item__line {
+  background: var(--color-accent);
+}
+
+/* ---------- 상태: 진행 중 ---------- */
+.step-item--current .step-item__number {
+  border: 3px solid var(--color-primary-active);
+  color: var(--color-primary);
+}
+.step-item--current .step-item__card {
+  padding: 19px 23px; /* 테두리가 2px라서 1px씩 줄여 크기 유지 */
+  background: var(--color-bg-sub);
+  border: 2px solid var(--color-primary-active);
+}

@@ -1,0 +1,46 @@
+/* ==========================================================
+   AiToolCard — 추천 AI (로고 + 이름 + 한 줄 설명 + 바로가기)
+   여러 개는 .ai-tool-list 로 감싸면 3열로 배치됨
+   ========================================================== */
+
+.ai-tool-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ai-tool-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-8);
+}
+.ai-tool-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+}
+.ai-tool-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.ai-tool-card__name {
+  font-size: var(--fs-17);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.ai-tool-card__desc {
+  font-size: var(--fs-14);
+  color: var(--color-body);
+}
+.ai-tool-card .btn {
+  margin-left: auto;
+}

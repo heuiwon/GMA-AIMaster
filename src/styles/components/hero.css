@@ -1,0 +1,34 @@
+/* ==========================================================
+   Hero — Home 맨 위 소개 영역 (연한 배경 + 큰 제목 + 오른쪽 이미지)
+   ========================================================== */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  min-height: 191px;
+  padding: 56px;
+  background: var(--color-bg-sub);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.hero__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.hero__desc {
+  font-size: var(--fs-17);
+  color: var(--color-body);
+}
+/* 피그마: 오른쪽에서 64, 위에서 25 위치의 364 × 133 이미지 */
+.hero__image {
+  position: absolute;
+  top: 25px;
+  right: 64px;
+  width: 364px;
+  height: 133px;
+  object-fit: cover;
+}

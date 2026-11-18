@@ -1,0 +1,53 @@
+/* ==========================================================
+   Header — 모든 페이지 맨 위 (header.js가 자동으로 그림)
+   HTML: <header id="header" data-active="home | learn | study"></header>
+   ========================================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--bar-padding-x);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 로고: 피그마에서는 211 × 71 이미지가 헤더 왼쪽 끝(0)에 붙어 있음 */
+.header__logo {
+  margin-left: calc(var(--bar-padding-x) * -1);
+}
+.header__logo img {
+  height: 71px;
+  width: auto;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* 메뉴 항목: 글자 아래에 28 × 3 밑줄 자리 (현재 메뉴만 색이 보임) */
+.header__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-15);
+  font-weight: 400;
+  color: var(--color-body);
+}
+.header__link::after {
+  content: "";
+  width: 28px;
+  height: 3px;
+  background: transparent;
+}
+.header__link.is-active {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.header__link.is-active::after {
+  background: var(--color-primary-active);
+}

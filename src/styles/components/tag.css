@@ -1,0 +1,45 @@
+/* ==========================================================
+   Tag — 학습 상태 표시
+   tag--done(학습 완료) / tag--doing(진행 중) / tag--before(학습 전)
+   ✓ · ● 표시는 CSS가 자동으로 붙임 → 글자만 쓰면 됨
+   예) <span class="tag tag--done">학습 완료</span>
+   ========================================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 8px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-8);
+  font-size: var(--fs-14);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* 체크 표시: 피그마는 16px 체크 아이콘 → 글자 기호로 대신함 */
+.tag--done::before,
+.tag--before::before {
+  content: "✓";
+}
+
+.tag--done {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+  color: #ffffff;
+}
+.tag--doing {
+  background: var(--color-border);
+  color: var(--color-primary);
+}
+.tag--doing::before {
+  content: "●";
+}
+.tag--before {
+  background: var(--color-bg);
+  color: var(--color-body);
+}
